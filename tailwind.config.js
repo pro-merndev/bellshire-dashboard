@@ -26,9 +26,11 @@ module.exports = {
       },
       fontFamily: {
         poppins: ['var(--font-poppins)'],
-        roboto: ['var(--font-roboto)']
+        roboto: ['var(--font-roboto)'],
+        inter: ['var(--font-inter)']
       },
       colors: {
+        'border-gradiant': 'linear-gradient(270deg, #0E0E0E 0%, #222222 100%)',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

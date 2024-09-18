@@ -1,12 +1,11 @@
 'use client';
-import React, { useState } from 'react';
 import { DashboardNav } from '@/components/dashboard-nav';
 import { navItems } from '@/constants/data';
+import { useSidebar } from '@/hooks/useSidebar';
 import { cn } from '@/lib/utils';
 import { ChevronLeft } from 'lucide-react';
-import { useSidebar } from '@/hooks/useSidebar';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type SidebarProps = {
   className?: string;
@@ -53,7 +52,7 @@ export default function Sidebar({ className }: SidebarProps) {
       <div className="space-y-4 py-4">
         <div className="px-3 py-2">
           <div className="mt-3 space-y-1">
-            <DashboardNav items={navItems} />
+            <DashboardNav navItems={navItems} />
           </div>
         </div>
       </div>

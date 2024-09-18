@@ -66,6 +66,26 @@
   body {
     @apply box-border bg-background text-foreground;
   }
+
+  .gradiant-bg {
+    @apply flex flex-col items-center justify-center rounded-3xl;
+  }
+
+  .gradiant-bg::after {
+    content: '';
+    position: absolute;
+    height: calc(100% + 7px);
+    width: calc(100% + 7px);
+    border-radius: 20px;
+    background-image: linear-gradient(
+      104.59deg,
+      rgba(255, 255, 255, 0.1) 0.76%,
+      rgba(255, 255, 255, 0.0256139) 32.78%,
+      rgba(255, 255, 255, 0.0735087) 69.11%,
+      rgba(255, 255, 255, 0.007) 99%
+    );
+    z-index: -1;
+  }
 }
 
 @layer utilities {

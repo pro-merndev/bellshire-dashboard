@@ -27,7 +27,7 @@ export function MobileSidebar({ className }: SidebarProps) {
               </h2>
               <div className="space-y-1">
                 <DashboardNav
-                  items={navItems}
+                  navItems={navItems}
                   isMobileNav={true}
                   setOpen={setOpen}
                 />

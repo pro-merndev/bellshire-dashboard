@@ -28,7 +28,7 @@ export default function UserAuthForm() {
   const [showPassword, setShowPassword] = useState(false);
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl');
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const defaultValues = {
     email: ''
   };
@@ -65,7 +65,7 @@ export default function UserAuthForm() {
                     placeholder="Email"
                     disabled={loading}
                     {...field}
-                    className="h-auto rounded-lg border-[0.5px] border-[#E5E5E5] py-3 text-base text-[#B5B5B5]"
+                    className="h-auto rounded-lg border-[0.5px] border-[#E5E5E5] py-3 text-sm md:text-base text-[#B5B5B5]"
                   />
                 </FormControl>
                 <FormMessage />
@@ -87,7 +87,7 @@ export default function UserAuthForm() {
                       placeholder="Entrez votre mot de passe"
                       disabled={loading}
                       {...field}
-                      className="h-auto rounded-lg border-[0.5px] border-[#E5E5E5] py-3 text-base text-[#B5B5B5]"
+                      className="h-auto rounded-lg border-[0.5px] border-[#E5E5E5] py-3 text-sm md:text-base text-[#B5B5B5]"
                     />
                     <Button
                       type="button"
