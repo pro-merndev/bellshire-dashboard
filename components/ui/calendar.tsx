@@ -1,13 +1,15 @@
 'use client';
 
-import * as React from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
+import * as React from 'react';
 import { DayPicker } from 'react-day-picker';
 
-import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { fr } from 'date-fns/locale';
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
+const frenchWeekDays = ['L', 'M', 'M', 'J', 'V', 'S', 'S'];
 
 function Calendar({
   className,
@@ -15,15 +17,25 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
+  const customFormatWeekdayName = (day: any) => {
+    return frenchWeekDays[day];
+  };
+
   return (
     <DayPicker
+      // formatters={{
+      //   formatWeekdayName: customFormatWeekdayName // Override weekdays with French initials
+      // }}
+      locale={undefined}
+      disableNavigation
       showOutsideDays={showOutsideDays}
       className={cn('p-3', className)}
       classNames={{
+        tbody: 'w-full',
         months: 'flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0',
         month: 'space-y-4',
         caption: 'flex justify-center pt-1 relative items-center',
-        caption_label: 'text-sm font-medium',
+        caption_label: 'text-xl text-left font-poppins font-medium w-full',
         nav: 'space-x-1 flex items-center',
         nav_button: cn(
           buttonVariants({ variant: 'outline' }),
@@ -32,10 +44,10 @@ function Calendar({
         nav_button_previous: 'absolute left-1',
         nav_button_next: 'absolute right-1',
         table: 'w-full border-collapse space-y-1',
-        head_row: 'flex',
+        head_row: 'flex gap-x-3',
         head_cell:
-          'text-muted-foreground rounded-md w-8 font-normal text-[0.8rem]',
-        row: 'flex w-full mt-2',
+          'text-[#B9B9B9] rounded-md w-8 font-poppins font-medium text-sm uppercase',
+        row: 'flex gap-x-3 w-full mt-2',
         cell: cn(
           'relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent',
           props.mode === 'range'
@@ -44,13 +56,13 @@ function Calendar({
         ),
         day: cn(
           buttonVariants({ variant: 'ghost' }),
-          'h-8 w-8 p-0 font-normal aria-selected:opacity-100'
+          'h-8 w-8 p-0 font-medium font-poppins aria-selected:opacity-100 hover:rounded-full hover:bg-[#FFFFFF1A]'
         ),
         day_range_start: 'day-range-start',
         day_range_end: 'day-range-end',
         day_selected:
-          'bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground',
-        day_today: 'bg-accent text-accent-foreground',
+          'text-[#FF5F5F] hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground',
+        day_today: 'bg-[#FFFFFF1A] text-accent-foreground !rounded-full',
         day_outside: 'text-muted-foreground opacity-50',
         day_disabled: 'text-muted-foreground opacity-50',
         day_range_middle:

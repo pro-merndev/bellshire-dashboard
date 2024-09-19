@@ -71,12 +71,22 @@
     @apply flex flex-col items-center justify-center rounded-3xl;
   }
 
+  .gradiant-bg::before {
+    content: '';
+    position: absolute;
+    height: calc(100%);
+    width: calc(100%);
+    border-radius: 20px;
+    background: #121212;
+    z-index: -1;
+  }
+
   .gradiant-bg::after {
     content: '';
     position: absolute;
     height: calc(100% + 7px);
     width: calc(100% + 7px);
-    border-radius: 20px;
+    border-radius: 22px;
     background-image: linear-gradient(
       104.59deg,
       rgba(255, 255, 255, 0.1) 0.76%,
@@ -84,8 +94,9 @@
       rgba(255, 255, 255, 0.0735087) 69.11%,
       rgba(255, 255, 255, 0.007) 99%
     );
-    z-index: -1;
+    z-index: -2;
   }
+  
 }
 
 @layer utilities {
