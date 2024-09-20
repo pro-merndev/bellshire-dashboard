@@ -3,15 +3,7 @@ import { AreaGraph } from '@/components/charts/area-graph';
 import { PieGraph } from '@/components/charts/pie-graph';
 import PageContainer from '@/components/layout/page-container';
 import Transition from '@/components/layout/transition';
-import { RecentSales } from '@/components/recent-sales';
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 

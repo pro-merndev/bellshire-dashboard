@@ -11,9 +11,9 @@ import {
 } from '@/components/ui/chart';
 import { PieSectorDataItem } from 'recharts/types/polar/Pie';
 const chartData = [
-  { browser: 'firefox', visitors: 50, fill: '#8DD1FF' },
-  { browser: 'chrome', visitors: 11, fill: '#F3C222' },
-  { browser: 'safari', visitors: 39, fill: '#4563F9' }
+  {  visitors: 50, fill: '#8DD1FF' },
+  {  visitors: 11, fill: '#F3C222' },
+  {  visitors: 39, fill: '#4563F9' }
 ];
 
 const chartConfig = {
@@ -53,7 +53,7 @@ export function PieGraph() {
           paddingAngle={10}
           data={chartData}
           dataKey="visitors"
-          nameKey="browser"
+          nameKey="visitors"
           innerRadius={60}
           strokeWidth={5}
           activeIndex={1}
