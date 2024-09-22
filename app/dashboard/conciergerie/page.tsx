@@ -32,7 +32,7 @@ export default function page() {
           </div>
           <div
             className="mt-10 flex h-screen w-full items-end rounded-2xl border-2 border-[#313131] p-4"
-            style={{ height: 'calc(100vh - 16rem)' }}
+            style={{ height: 'calc(100vh - 24rem)' }}
           >
             <div className="relative w-full">
               <Input
@@ -43,7 +43,7 @@ export default function page() {
                 }}
                 placeholder="Entrer en contact avec notre service de conciergerie..."
               />
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 transform">
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 transform cursor-pointer">
                 <IoIosSend className="text-[#8B8B8B]" size={18} />
               </div>
             </div>

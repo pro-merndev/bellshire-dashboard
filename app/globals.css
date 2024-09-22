@@ -29,6 +29,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --color-amount: #fff;
   }
 
   .dark {
@@ -96,7 +97,6 @@
     );
     z-index: -2;
   }
-  
 }
 
 @layer utilities {
@@ -108,4 +108,18 @@
     height: 100vh; /* Fallback */
     height: 100dvh;
   }
+}
+
+.recharts-cartesian-grid-horizontal line {
+  stroke-dasharray: 5, 10;
+  stroke: #2F2F2F !important;
+  stroke-opacity: 1 !important;
+  color: #fff !important;
+}
+
+.recharts-cartesian-grid-vertical line {
+  stroke-dasharray: 0;
+  stroke: #2F2F2F !important;
+  stroke-opacity: 1 !important;
+  color: #fff !important;
 }

@@ -1,8 +1,7 @@
+import { format } from 'date-fns';
 import Image from 'next/image';
-import React from 'react';
 import { Button } from '../ui/button';
 import { Calendar } from '../ui/calendar';
-import { format } from 'date-fns';
 
 const CalendarCard = () => {
   return (

@@ -20,7 +20,7 @@ export default function Header() {
           </div>
           <div className="flex items-center gap-2">
             <Image
-              src="Notification Icon.svg"
+              src="/notification-Icon.svg"
               width={24}
               height={24}
               className="h-6 w-6 cursor-pointer"

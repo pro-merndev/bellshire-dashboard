@@ -11,28 +11,46 @@ import {
 } from '@/components/ui/chart';
 import { PieSectorDataItem } from 'recharts/types/polar/Pie';
 const chartData = [
-  {  visitors: 50, fill: '#8DD1FF' },
-  {  visitors: 11, fill: '#F3C222' },
-  {  visitors: 39, fill: '#4563F9' }
+  { visitors: 50, fill: '#8DD1FF' },
+  { visitors: 11, fill: '#F3C222' },
+  { visitors: 39, fill: '#4563F9' }
 ];
 
-const chartConfig = {
+export const chartConfig = {
   visitors: {
     label: 'Visitors'
-  },
-  chrome: {
-    label: 'Chrome',
-    color: 'hsl(var(--chart-1))'
-  },
-  safari: {
-    label: 'Safari',
-    color: 'hsl(var(--chart-2))'
-  },
-  firefox: {
-    label: 'Firefox',
-    color: 'hsl(var(--chart-3))'
   }
 } satisfies ChartConfig;
+
+const RADIAN = Math.PI / 180;
+const renderCustomizedLabel = ({
+  cx,
+  cy,
+  midAngle,
+  innerRadius,
+  outerRadius,
+  fill,
+  value
+}: {
+  [key: string]: any;
+}) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+  const textColor = fill === '#4563F9' ? 'white' : 'black';
+
+  return (
+    <text
+      x={x}
+      y={y}
+      fill={textColor}
+      textAnchor={x > cx ? 'start' : 'end'}
+      // dominantBaseline="central"
+    >
+      {value}%
+    </text>
+  );
+};
 
 export function PieGraph() {
   const totalVisitors = React.useMemo(() => {
@@ -50,6 +68,9 @@ export function PieGraph() {
           content={<ChartTooltipContent hideLabel />}
         />
         <Pie
+          // label={renderCustomizedLabel}
+          cx="50%"
+          cy="50%"
           paddingAngle={10}
           data={chartData}
           dataKey="visitors"
@@ -66,12 +87,29 @@ export function PieGraph() {
         >
           <LabelList
             dataKey="visitors"
-            className="z-10 fill-background font-inter font-bold"
+            className="relative z-10 fill-background font-inter font-bold text-black"
             stroke="none"
             fontSize={12}
             formatter={(value: keyof typeof chartConfig) => {
               return `${value}%`;
             }}
+            // content={(props) => {
+            //   const { value, cx, cy, fill } = props; // Destructure needed properties
+            //   const textColor = fill === '#4563F9' ? 'white' : 'black'; // Check the fill color
+
+            //   return (
+            //     <text
+            //       x={cx} // Use cx for horizontal centering
+            //       y={cy} // Use cy for vertical centering
+            //       textAnchor="middle"
+            //       dominantBaseline="middle"
+            //       fill={textColor} // Apply dynamic color based on fill
+            //       style={{ fontSize: '12px', fontWeight: 'bold' }}
+            //     >
+            //       {value}%
+            //     </text>
+            //   );
+            // }}
           />
           <Label
             content={({ viewBox }) => {

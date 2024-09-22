@@ -14,7 +14,9 @@ import {
 import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 export function UserNav() {
+  
   const { data: session } = useSession();
+
   if (session) {
     return (
       <DropdownMenu>

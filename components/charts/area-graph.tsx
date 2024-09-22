@@ -1,9 +1,14 @@
 'use client';
 
 import {
+  Area,
+  AreaChart,
   CartesianGrid,
+  Cross,
+  Customized,
   Line,
   LineChart,
+  ReferenceLine,
   ResponsiveContainer,
   XAxis,
   YAxis
@@ -27,11 +32,11 @@ const chartData = [
 
 const chartConfig = {
   amount: {
-    label: 'amount',
+    label: 'Amount',
     color: '#fff'
   },
   month: {
-    label: 'month',
+    label: 'Month',
     color: '#fff'
   }
 } satisfies ChartConfig;
@@ -42,32 +47,34 @@ export function AreaGraph() {
       config={chartConfig}
       className="aspect-square max-h-[250px] w-full"
     >
-      {/* <ResponsiveContainer width="100%" height={300}> */}
-      <LineChart
-        data={chartData}
-        // margin={{
-        //   left: 12,
-        //   right: 12
-        // }}
-      >
+      <AreaChart data={chartData}>
         <defs>
           <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-            <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-          </linearGradient>{' '}
-           
+            <stop
+              offset="0%"
+              stopColor="rgba(255, 255, 255, 0.3)" // More transparent starting point
+              stopOpacity={0.3}
+            />
+            <stop
+              offset="50%"
+              stopColor="rgba(255, 255, 255, 0.2)" // Softer gradient at midpoint
+              stopOpacity={0.2}
+            />
+            <stop
+              offset="100%"
+              stopColor="rgba(255, 255, 255, 0.05)" // Very faint at the bottom
+              stopOpacity={0.05}
+            />
+          </linearGradient>
         </defs>
 
         {/* CartesianGrid with custom line styles */}
         <CartesianGrid
-          strokeWidth={3}
-          stroke="#fff" // Set the color to white
-          strokeDasharray="0" // Dashed horizontal lines
-          vertical={true} // Enable vertical grid lines (solid by default)
-          horizontal={true} // Enable horizontal grid lines
-          // verticalCoordinatesGenerator={(props) =>
-          //   props.width > 0 ? [0, props.width / 2, props.width] : []
-          // } // Custom vertical lines if needed
+          strokeWidth={2}
+          stroke="#fff"
+          strokeDasharray="0"
+          vertical={true}
+          horizontal={true}
         />
 
         {/* Y-axis for dollar amounts */}
@@ -77,6 +84,7 @@ export function AreaGraph() {
           axisLine={false}
           tickMargin={8}
           tickFormatter={(value) => `$${value}`}
+          stroke="#fff"
         />
 
         {/* X-axis for months */}
@@ -90,21 +98,24 @@ export function AreaGraph() {
         {/* Tooltip */}
         <ChartTooltip
           cursor={false}
-          content={<ChartTooltipContent hideLabel />}
+          content={
+            <h6 className="rounded-full bg-[#272727] px-4 py-1.5 font-inter text-white">
+              $950
+            </h6>
+          }
         />
 
         {/* Line with gradient fill and shadow */}
-        <Line
+        <Area
           dataKey="amount"
           type="linear"
           stroke="#fff"
           strokeWidth={3}
           dot={false}
           fillOpacity={1}
-          fill="url(#colorUv)" // Applying the gradient shadow
+          fill="url(#colorUv)"
         />
-      </LineChart>
-      {/* </ResponsiveContainer> */}
+      </AreaChart>
     </ChartContainer>
   );
 }

@@ -197,7 +197,6 @@ export default function page() {
                   <div className="basis-1/2 space-y-4">
                     <Button
                       className="h-auto w-full rounded-xl py-3 font-roboto text-white"
-                      type="submit"
                       style={{
                         background:
                           'linear-gradient(90deg, #949494 0%, #191919 100%)'
@@ -207,7 +206,6 @@ export default function page() {
                     </Button>
                     <Button
                       className="h-auto w-full rounded-xl py-3 font-roboto text-white"
-                      type="submit"
                       style={{
                         background:
                           'linear-gradient(90deg, #FFFFFF12 0%, #D9D9D900 100%)'
@@ -246,7 +244,6 @@ export default function page() {
                   <div className="basis-1/2 space-y-4">
                     <Button
                       className="h-auto w-full rounded-xl py-3 font-roboto text-white"
-                      type="submit"
                       style={{
                         background:
                           'linear-gradient(90deg, #949494 0%, #191919 100%)'
@@ -256,7 +253,6 @@ export default function page() {
                     </Button>
                     <Button
                       className="h-auto w-full rounded-xl py-3 font-roboto text-white"
-                      type="submit"
                       style={{
                         background:
                           'linear-gradient(90deg, #FFFFFF12 0%, #D9D9D900 100%)'
@@ -276,7 +272,7 @@ export default function page() {
               >
                 <div className="w-full p-5">
                   <div>
-                    <div className="flex items-center gap-x-2 mb-4">
+                    <div className="mb-4 flex items-center gap-x-2">
                       <Image
                         src={'/notification-status.svg'}
                         alt="Tether"
@@ -354,7 +350,7 @@ export default function page() {
                         </p>
                       </div>
                     </div>
-                    <p className="font-poppins text-sm font-medium text-[#B9B9B9] mt-10">
+                    <p className="mt-10 font-poppins text-sm font-medium text-[#B9B9B9]">
                       AOUT 2024
                     </p>
                   </div>
@@ -369,7 +365,7 @@ export default function page() {
               >
                 <div className="w-full p-5">
                   <div>
-                    <div className="flex items-center gap-x-2 mb-4">
+                    <div className="mb-4 flex items-center gap-x-2">
                       <Image
                         src={'/notification-status.svg'}
                         alt="Tether"
@@ -447,7 +443,7 @@ export default function page() {
                         </p>
                       </div>
                     </div>
-                    <p className="font-poppins text-sm font-medium text-[#B9B9B9] mt-10">
+                    <p className="mt-10 font-poppins text-sm font-medium text-[#B9B9B9]">
                       AOUT 2024
                     </p>
                   </div>

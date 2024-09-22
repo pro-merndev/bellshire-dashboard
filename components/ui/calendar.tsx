@@ -7,9 +7,9 @@ import { DayPicker } from 'react-day-picker';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { fr } from 'date-fns/locale';
+import { format } from 'date-fns';
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
-const frenchWeekDays = ['L', 'M', 'M', 'J', 'V', 'S', 'S'];
 
 function Calendar({
   className,
@@ -17,16 +17,19 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
-  const customFormatWeekdayName = (day: any) => {
-    return frenchWeekDays[day];
+  const formatWeekdayName = (weekDay: Date) => {
+    if (weekDay) {
+      const firstLetter = format(weekDay, 'EEEE', { locale: fr }).charAt(0);
+      return firstLetter;
+    }
+    return ''; // Or return a default value if weekDay is null or undefined
   };
 
   return (
     <DayPicker
-      // formatters={{
-      //   formatWeekdayName: customFormatWeekdayName // Override weekdays with French initials
-      // }}
-      locale={undefined}
+      formatters={{
+        formatWeekdayName // Override weekdays with French initials
+      }}
       disableNavigation
       showOutsideDays={showOutsideDays}
       className={cn('p-3', className)}
