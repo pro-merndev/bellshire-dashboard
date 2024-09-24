@@ -19,7 +19,8 @@ export const navItems: NavItem[] = [
       title: 'Consultation',
       href: '/dashboard/consultation',
       icon: '/calendar-tick.svg',
-      label: 'wallet'
+      label: 'wallet',
+      endIcon: '/calendar-tick.svg'
     },
     {
       title: 'Chat',

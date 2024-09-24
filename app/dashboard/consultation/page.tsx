@@ -1,11 +1,8 @@
 import CalendarCard from '@/components/cards/calendar-card';
-import CurrencyCard from '@/components/cards/currency-card';
 import PageContainer from '@/components/layout/page-container';
 import Transition from '@/components/layout/transition';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import Link from 'next/link';
-import { BsArrowUpRight } from 'react-icons/bs';
 
 export default function page() {
   return (
@@ -29,7 +26,7 @@ export default function page() {
                   'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
               }}
             >
-              <div className="flex w-full flex-col justify-between p-5 h-full">
+              <div className="flex h-full w-full flex-col justify-between gap-4 p-5">
                 <div className="space-y-6">
                   <div className="flex items-center gap-x-2">
                     <Image
@@ -48,18 +45,18 @@ export default function page() {
                 </div>
                 <div className="space-y-4">
                   <Button
+                    variant={'default'}
                     className="h-auto w-full rounded-full py-3 font-roboto text-white"
-                    type="submit"
-                    style={{
-                      background:
-                        'linear-gradient(90deg, #949494 0%, #191919 100%)'
-                    }}
+                    // style={{
+                    //   background:
+                    //     'linear-gradient(90deg, #949494 0%, #191919 100%)'
+                    // }}
                   >
                     Réserver maintenant
                   </Button>
                   <Button
+                    variant={'secondary'}
                     className="h-auto w-full rounded-full py-3 font-roboto text-white"
-                    type="submit"
                     style={{
                       background:
                         'linear-gradient(90deg, #FFFFFF12 0%, #D9D9D900 100%)'

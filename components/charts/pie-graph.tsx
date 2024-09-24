@@ -22,35 +22,35 @@ export const chartConfig = {
   }
 } satisfies ChartConfig;
 
-const RADIAN = Math.PI / 180;
-const renderCustomizedLabel = ({
-  cx,
-  cy,
-  midAngle,
-  innerRadius,
-  outerRadius,
-  fill,
-  value
-}: {
-  [key: string]: any;
-}) => {
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-  const x = cx + radius * Math.cos(-midAngle * RADIAN);
-  const y = cy + radius * Math.sin(-midAngle * RADIAN);
-  const textColor = fill === '#4563F9' ? 'white' : 'black';
+// const RADIAN = Math.PI / 180;
+// const renderCustomizedLabel = ({
+//   cx,
+//   cy,
+//   midAngle,
+//   innerRadius,
+//   outerRadius,
+//   fill,
+//   value
+// }: {
+//   [key: string]: any;
+// }) => {
+//   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+//   const x = cx + radius * Math.cos(-midAngle * RADIAN);
+//   const y = cy + radius * Math.sin(-midAngle * RADIAN);
+//   const textColor = fill === '#4563F9' ? 'white' : 'black';
 
-  return (
-    <text
-      x={x}
-      y={y}
-      fill={textColor}
-      textAnchor={x > cx ? 'start' : 'end'}
-      // dominantBaseline="central"
-    >
-      {value}%
-    </text>
-  );
-};
+//   return (
+//     <text
+//       x={x}
+//       y={y}
+//       fill={textColor}
+//       textAnchor={x > cx ? 'start' : 'end'}
+//       // dominantBaseline="central"
+//     >
+//       {value}%
+//     </text>
+//   );
+// };
 
 export function PieGraph() {
   const totalVisitors = React.useMemo(() => {
@@ -87,7 +87,7 @@ export function PieGraph() {
         >
           <LabelList
             dataKey="visitors"
-            className="relative z-10 fill-background font-inter font-bold text-black"
+            className="relative z-10 fill-background font-inter font-bold"
             stroke="none"
             fontSize={12}
             formatter={(value: keyof typeof chartConfig) => {

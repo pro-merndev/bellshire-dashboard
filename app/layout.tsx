@@ -1,7 +1,6 @@
 import { auth } from '@/auth';
 import Providers from '@/components/layout/providers';
 import { Toaster } from '@/components/ui/toaster';
-import '@uploadthing/react/styles.css';
 import type { Metadata } from 'next';
 import { Roboto, Poppins, Inter } from 'next/font/google';
 import NextTopLoader from 'nextjs-toploader';

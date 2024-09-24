@@ -10,17 +10,14 @@ const ConciergerieCard = () => {
       }}
     >
       <div className="w-full space-y-6 p-6">
-        <h4 className="w-full text-center font-poppins text-xl font-semibold text-white">
+        <h4 className="w-full text-center font-poppins text-base font-semibold text-white lg:text-xl">
           LEX AGENCY <br />
           (EXPATRIATION)
         </h4>
         <div className="space-y-4">
           <Button
-            className="h-auto w-full rounded-xl py-3 font-roboto text-white "
-            type="submit"
-            style={{
-              background: 'linear-gradient(90deg, #949494 0%, #191919 100%)'
-            }}
+            className="h-auto w-full rounded-xl py-2 font-roboto text-sm text-white lg:py-3 lg:text-base"
+            variant={'default'}
           >
             Découvrir
           </Button>

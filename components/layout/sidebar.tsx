@@ -3,7 +3,6 @@ import { DashboardNav } from '@/components/dashboard-nav';
 import { navItems } from '@/constants/data';
 import { useSidebar } from '@/hooks/useSidebar';
 import { cn } from '@/lib/utils';
-import { ChevronLeft } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -21,36 +20,37 @@ export default function Sidebar({ className }: SidebarProps) {
   return (
     <aside
       className={cn(
-        `relative hidden h-screen flex-none border-r bg-[#121212] transition-[width] duration-500 md:block`,
-        !isMinimized ? 'w-72' : 'w-[72px]',
+        `relative hidden h-screen flex-none transition-[width] duration-500 md:block`,
+        // `border-r bg-[#121212]`,
+        !isMinimized ? 'w-56 2xl:w-72' : 'w-[72px]',
         className
       )}
     >
-      <div className="hidden p-5 pt-10 lg:block">
-        <Link href={'/dashboard'} className={cn('flex items-center gap-x-2')}>
+      <div className="hidden p-5 lg:pt-5 2xl:pt-5 md:block">
+        <Link href={'/dashboard'} className={cn('flex items-center gap-x-1 2xl:gap-x-2')}>
           <Image
             src={'/white-logo.svg'}
             alt="white-logo"
-            className="mr-2 h-10 w-10"
+            className="mr-1 2xl:mr-2 w-7 h-7 2xl:h-10 2xl:w-10"
             width={40}
             height={40}
           />
           {!isMinimized && (
-            <span className="text-xl font-medium text-[#D1D1D1]">
+            <span className="text-base 2xl:text-xl font-medium text-[#D1D1D1]">
               Bellshire Mansory
             </span>
           )}
         </Link>
       </div>
-      <ChevronLeft
+      {/* <ChevronLeft
         className={cn(
           'absolute -right-3 top-10 z-50  cursor-pointer rounded-full border bg-background text-3xl text-foreground',
           isMinimized && 'rotate-180'
         )}
         onClick={handleToggle}
-      />
-      <div className="space-y-4 py-4">
-        <div className="px-3 py-2">
+      /> */}
+      <div className="space-y-4 2xl:py-4">
+        <div className="px-3 2xl:py-2">
           <div className="mt-3 space-y-1">
             <DashboardNav navItems={navItems} />
           </div>

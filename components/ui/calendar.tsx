@@ -38,7 +38,7 @@ function Calendar({
         months: 'flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0',
         month: 'space-y-4',
         caption: 'flex justify-center pt-1 relative items-center',
-        caption_label: 'text-xl text-left font-poppins font-medium w-full',
+        caption_label: 'text-base xl:text-xl text-left font-poppins font-medium w-full',
         nav: 'space-x-1 flex items-center',
         nav_button: cn(
           buttonVariants({ variant: 'outline' }),
@@ -49,22 +49,22 @@ function Calendar({
         table: 'w-full border-collapse space-y-1',
         head_row: 'flex gap-x-3',
         head_cell:
-          'text-[#B9B9B9] rounded-md w-8 font-poppins font-medium text-sm uppercase',
+          'text-[#B9B9B9] rounded-md w-5 md:w-4 xl:w-8 font-poppins font-medium text-sm md:text-xs uppercase',
         row: 'flex gap-x-3 w-full mt-2',
         cell: cn(
-          'relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent',
+          'relative p-0 text-center text-xs xl:text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent',
           props.mode === 'range'
             ? '[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md'
             : '[&:has([aria-selected])]:rounded-md'
         ),
         day: cn(
-          buttonVariants({ variant: 'ghost' }),
-          'h-8 w-8 p-0 font-medium font-poppins aria-selected:opacity-100 hover:rounded-full hover:bg-[#FFFFFF1A]'
+          // buttonVariants({ variant: 'ghost' }),
+          'w-5 h-5 md:w-4 md:h-4 xl:h-8 xl:w-8 p-0 font-medium font-poppins aria-selected:opacity-100 hover:rounded-full hover:bg-[#FFFFFF1A] text-xs flex items-center justify-center'
         ),
         day_range_start: 'day-range-start',
         day_range_end: 'day-range-end',
         day_selected:
-          'text-[#FF5F5F] hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground',
+          'text-[#FF5F5F]',
         day_today: 'bg-[#FFFFFF1A] text-accent-foreground !rounded-full',
         day_outside: 'text-muted-foreground opacity-50',
         day_disabled: 'text-muted-foreground opacity-50',

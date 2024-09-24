@@ -15,7 +15,7 @@ export default function Header() {
           </p>
         </div>
         <div className="flex items-center justify-between">
-          <div className={cn('block lg:!hidden')}>
+          <div className={cn('block md:!hidden')}>
             <MobileSidebar />
           </div>
           <div className="flex items-center gap-2">

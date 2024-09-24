@@ -1,12 +1,6 @@
-import CalendarCard from '@/components/cards/calendar-card';
-import CurrencyCard from '@/components/cards/currency-card';
 import PdfCard from '@/components/cards/pdf-card';
 import PageContainer from '@/components/layout/page-container';
 import Transition from '@/components/layout/transition';
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
-import Link from 'next/link';
-import { BsArrowUpRight } from 'react-icons/bs';
 
 export default function page() {
   return (

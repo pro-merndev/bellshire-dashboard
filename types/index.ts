@@ -5,6 +5,7 @@ export interface NavItem {
     href?: string;
     disabled?: boolean;
     icon?: any;
+    endIcon?: any;
     label?: string;
     description?: string;
   }[]

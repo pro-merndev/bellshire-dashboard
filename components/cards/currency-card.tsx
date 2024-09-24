@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 
 interface CurrencyCardProps {
+  id: number;
   title: string;
   currency: string;
   amount: string;
@@ -19,6 +20,7 @@ interface CurrencyCardProps {
 
 const CurrencyCard = (props: CurrencyCardProps) => {
   const {
+    id,
     title,
     color,
     currency,
@@ -31,11 +33,13 @@ const CurrencyCard = (props: CurrencyCardProps) => {
 
   return (
     <motion.div
-      key={title}
+      key={id}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 1 }}
+      layout
+      className="col-span-2 lg:col-span-1"
     >
       <Card
         className="gradiant-bg relative rounded-[20px] border-none bg-custom-radial shadow-custom"
@@ -51,13 +55,13 @@ const CurrencyCard = (props: CurrencyCardProps) => {
                 orientation="vertical"
                 className={cn(`h-6 w-1 rounded-full`, color)}
               />
-              <CardTitle className="font-poppins text-sm font-medium text-[#B9B9B9]">
+              <CardTitle className="font-poppins text-xs font-medium text-[#B9B9B9] lg:text-sm">
                 {title} Quote{' '}
               </CardTitle>
             </div>
             <div
               className={cn(
-                `flex h-10 w-10 items-center justify-center rounded-full`,
+                `relative z-0 flex h-10 w-10 items-center justify-center rounded-full`,
                 iconBgColor
               )}
             >
@@ -66,12 +70,16 @@ const CurrencyCard = (props: CurrencyCardProps) => {
           </CardHeader>
           <CardContent>
             <div className="flex items-end gap-x-1 font-poppins">
-              <p className="text-3xl font-medium">${amount}</p>
-              <span className="text-base text-[#B9B9B9]">{currency}</span>
+              <p className="text-lg font-medium lg:text-xl xl:text-3xl">
+                ${amount}
+              </p>
+              <span className="text-sm text-[#B9B9B9] xl:text-base">
+                {currency}
+              </span>
             </div>
             <Button
               className={cn(
-                'mt-2 h-auto rounded-full py-1 font-inter text-sm font-medium',
+                'mt-2 h-auto rounded-full py-1 font-inter text-xs font-medium xl:text-sm',
                 rateStatus
                   ? 'bg-[#85FFD81A] text-[#1DCA93]'
                   : 'bg-[#FF85851A] text-[#FF6E6E]'

@@ -2,6 +2,11 @@
 const nextConfig = {
   images: {
     domains: ['utfs.io']
+  },
+  webpack: (config) => {
+    config.resolve.alias.canvas = false;
+
+    return config;
   }
 };
 

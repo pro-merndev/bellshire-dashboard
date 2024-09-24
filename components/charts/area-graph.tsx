@@ -1,24 +1,11 @@
 'use client';
 
-import {
-  Area,
-  AreaChart,
-  CartesianGrid,
-  Cross,
-  Customized,
-  Line,
-  LineChart,
-  ReferenceLine,
-  ResponsiveContainer,
-  XAxis,
-  YAxis
-} from 'recharts';
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from 'recharts';
 
 import {
   ChartConfig,
   ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent
+  ChartTooltip
 } from '@/components/ui/chart';
 
 const chartData = [
@@ -83,7 +70,10 @@ export function AreaGraph() {
           tickLine={false}
           axisLine={false}
           tickMargin={8}
-          tickFormatter={(value) => `$${value}`}
+          tickFormatter={(value: number) => {
+            const isShowThousand = value != 0 ? 'k' : '';
+            return `${value.toString()[0]}${isShowThousand}`;
+          }}
           stroke="#fff"
         />
 
