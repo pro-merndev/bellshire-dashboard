@@ -10,8 +10,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: 'gradiant-button-primary',
-        outline:
-          'border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground',
+        outline: '',
+        none: '',
         secondary: 'gradiant-button-secondary'
       },
       size: {

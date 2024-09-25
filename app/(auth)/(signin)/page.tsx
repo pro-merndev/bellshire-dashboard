@@ -11,16 +11,14 @@ export default function AuthenticationPage() {
     <div className="relative h-screen flex-col items-center justify-center bg-background">
       <div className="flex h-full items-center p-4 text-white lg:p-8">
         <div
-          className="mx-auto box-border flex w-full flex-col justify-center space-y-6 border-2 p-10 sm:w-[450px]"
+          className="login-gradiant-bg relative z-10 mx-auto box-border flex w-full flex-col justify-center space-y-6 p-10 sm:w-[450px]"
           style={{
-            borderImageSource:
-              'linear-gradient(104.59deg, rgba(255, 255, 255, 0.1) 0.76%, rgba(255, 255, 255, 0.0256139) 32.78%, rgba(255, 255, 255, 0.0735087) 69.11%, rgba(255, 255, 255, 0.007) 99%)',
-            borderImageSlice: 1,
             background:
-              'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
+              'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)',
+            boxShadow: '0px 4px 25px 0px #00000026'
           }}
         >
-          <div className="flex items-center gap-x-2">
+          <div className="flex w-full items-center gap-x-2">
             <Image
               src="/white-logo.svg"
               width={40}

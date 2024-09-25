@@ -18,9 +18,12 @@ import * as z from 'zod';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Enter a valid email address' }),
+  terms: z.boolean(),
   password: z.string().min(6)
 });
 import { EyeIcon, EyeOffIcon } from 'lucide-react';
+import Link from 'next/link';
+import { Switch } from '../ui/switch';
 
 type UserFormValue = z.infer<typeof formSchema>;
 
@@ -56,7 +59,7 @@ export default function UserAuthForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="font-poppins ml-4 text-xs font-light tracking-wide">
+                <FormLabel className="ml-4 font-poppins text-xs font-light tracking-wide">
                   Adresse mail
                 </FormLabel>
                 <FormControl>
@@ -65,7 +68,11 @@ export default function UserAuthForm() {
                     placeholder="Email"
                     disabled={loading}
                     {...field}
-                    className="h-auto rounded-lg border-[0.5px] border-[#E5E5E5] py-3 text-sm md:text-base text-[#B5B5B5]"
+                    className="h-auto rounded-lg border-[0.5px] border-[#E5E5E5] py-3 text-sm text-[#B5B5B5] md:text-base"
+                    style={{
+                      background:
+                        'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
+                    }}
                   />
                 </FormControl>
                 <FormMessage />
@@ -77,7 +84,7 @@ export default function UserAuthForm() {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="font-poppins ml-4 text-xs font-light tracking-wide">
+                <FormLabel className="ml-4 font-poppins text-xs font-light tracking-wide">
                   Mot de passe
                 </FormLabel>
                 <FormControl>
@@ -87,20 +94,32 @@ export default function UserAuthForm() {
                       placeholder="Entrez votre mot de passe"
                       disabled={loading}
                       {...field}
-                      className="h-auto rounded-lg border-[0.5px] border-[#E5E5E5] py-3 text-sm md:text-base text-[#B5B5B5]"
+                      className="h-auto rounded-lg border-[0.5px] border-[#E5E5E5] py-3 text-sm text-[#B5B5B5] md:text-base"
+                      style={{
+                        background:
+                          'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
+                      }}
                     />
                     <Button
                       type="button"
-                      // variant="ghost"
+                      variant="none"
                       size="sm"
                       className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
                       onClick={() => setShowPassword((prev) => !prev)}
                       disabled={loading}
                     >
                       {showPassword && !loading ? (
-                        <EyeIcon className="h-4 w-4" aria-hidden="true" />
+                        <EyeIcon
+                          className="h-4 w-4"
+                          aria-hidden="true"
+                          color="#4D4D4D"
+                        />
                       ) : (
-                        <EyeOffIcon className="h-4 w-4" aria-hidden="true" />
+                        <EyeOffIcon
+                          className="h-4 w-4"
+                          aria-hidden="true"
+                          color="#4D4D4D"
+                        />
                       )}
                       <span className="sr-only">
                         {showPassword ? 'Hide password' : 'Show password'}
@@ -112,9 +131,43 @@ export default function UserAuthForm() {
               </FormItem>
             )}
           />
+          <div className="flex justify-between">
+            <div>
+              <FormField
+                control={form.control}
+                name="terms"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <div className="relative flex items-center gap-2">
+                        <Switch
+                          defaultChecked={true}
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                          className="border-[0.5px] border-[#E5E5E5]"
+                          style={{
+                            background:
+                              'linear-gradient(90deg, #949494 0%, #191919 100%)'
+                          }}
+                        />
+                        <FormLabel className="text-xs tracking-wide text-[#E4E4E4AF]">
+                          Se souvenir de moi
+                        </FormLabel>
+                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <Link href="#" className="text-xs text-[#007AFF]">
+              Mot de passe oublié ?
+            </Link>
+          </div>
           <Button
+            variant={'none'}
             disabled={loading}
-            className="font-roboto h-auto w-full py-3 text-white"
+            className="h-auto w-full py-3 font-roboto text-white"
             type="submit"
             style={{
               background: 'linear-gradient(90deg, #949494 0%, #191919 100%)'
