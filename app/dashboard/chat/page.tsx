@@ -8,7 +8,7 @@ export default function page() {
     <PageContainer scrollable={true}>
       <div className="pb-20">
         <Transition>
-          <div className="flex gap-x-10 2xl:mt-10">
+          <div className="flex gap-x-10">
             <ChannelBox />
             <Chatbox />
           </div>

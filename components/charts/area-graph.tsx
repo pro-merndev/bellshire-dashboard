@@ -20,11 +20,11 @@ const chartData = [
 const chartConfig = {
   amount: {
     label: 'Amount',
-    color: '#fff'
+    color: 'var(--chart-1)'
   },
   month: {
     label: 'Month',
-    color: '#fff'
+    color: 'var(--chart-1)'
   }
 } satisfies ChartConfig;
 
@@ -74,7 +74,8 @@ export function AreaGraph() {
             const isShowThousand = value != 0 ? 'k' : '';
             return `${value.toString()[0]}${isShowThousand}`;
           }}
-          stroke="#fff"
+          // stroke="#fff"
+          className="[&>g>g>text]:stroke-lightHeading dark:[&>g>g>text]:stroke-calendarScheduleText dark:[&>g>g>text]:stroke-1"
         />
 
         {/* X-axis for months */}
@@ -83,6 +84,7 @@ export function AreaGraph() {
           tickLine={false}
           axisLine={false}
           tickMargin={8}
+          className="[&>g>g>text]:stroke-lightHeading dark:[&>g>g>text]:stroke-calendarScheduleText dark:[&>g>g>text]:stroke-1"
         />
 
         {/* Tooltip */}
@@ -99,7 +101,7 @@ export function AreaGraph() {
         <Area
           dataKey="amount"
           type="linear"
-          stroke="#fff"
+          stroke="var(--chart-1)"
           strokeWidth={3}
           dot={false}
           fillOpacity={1}

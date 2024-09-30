@@ -41,13 +41,7 @@ const CurrencyCard = (props: CurrencyCardProps) => {
       layout
       className="col-span-2 lg:col-span-1"
     >
-      <Card
-        className="gradiant-bg relative rounded-[20px] border-none bg-custom-radial shadow-custom"
-        style={{
-          background:
-            'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
-        }}
-      >
+      <Card className="dark:gradiant-bg bg-custom-radial-light relative rounded-[20px] border-none dark:bg-custom-radial dark:shadow-custom">
         <div className="w-full">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="flex items-center gap-x-2">
@@ -55,8 +49,8 @@ const CurrencyCard = (props: CurrencyCardProps) => {
                 orientation="vertical"
                 className={cn(`h-6 w-1 rounded-full`, color)}
               />
-              <CardTitle className="font-poppins text-xs font-medium text-[#B9B9B9] lg:text-sm">
-                {title} Quote{' '}
+              <CardTitle className="font-poppins text-xs font-medium text-dark-bg lg:text-sm dark:text-calendarScheduleText">
+                {title}{' '}
               </CardTitle>
             </div>
             <div
@@ -70,10 +64,10 @@ const CurrencyCard = (props: CurrencyCardProps) => {
           </CardHeader>
           <CardContent>
             <div className="flex items-end gap-x-1 font-poppins">
-              <p className="text-lg font-medium lg:text-xl xl:text-3xl">
+              <p className="text-lg font-medium lg:text-xl xl:text-3xl dark:text-white text-dark-bg">
                 ${amount}
               </p>
-              <span className="text-sm text-[#B9B9B9] xl:text-base">
+              <span className="text-sm text-dark-bg xl:text-base dark:text-calendarScheduleText">
                 {currency}
               </span>
             </div>

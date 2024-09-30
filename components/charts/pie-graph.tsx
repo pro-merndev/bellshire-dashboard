@@ -124,14 +124,14 @@ export function PieGraph() {
                     <tspan
                       x={viewBox.cx}
                       dy={-10} // Adjust the vertical offset if needed
-                      className="fill-foreground text-2xl font-bold"
+                      className="dark:fill-white fill-foreground text-2xl font-bold"
                     >
                       {totalVisitors.toLocaleString()}%
                     </tspan>
                     <tspan
                       x={viewBox.cx}
                       dy={20} // This positions the second line below the first line
-                      className="fill-muted-foreground"
+                      className="dark:fill-white fill-muted-foreground"
                     >
                       Portefeuille
                     </tspan>

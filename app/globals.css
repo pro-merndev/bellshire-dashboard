@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 253 43% 3%;
+    --background: #f2f2f2;
     --foreground: 253 31% 98%;
     --muted: 253 7% 13%;
     --muted-foreground: 253 13% 63%;
@@ -24,15 +24,22 @@
     --destructive-foreground: 0 0% 100%;
     --ring: 253 91% 58%;
     --radius: 0.5rem;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --chart-1: #1b1b1b;
+    --button-radial-primary: radial-gradient(
+        117.2% 352.94% at 3.21% 1.26%,
+        rgba(198, 198, 198, 0.5) 0%,
+        rgba(166, 166, 166, 0.25) 100%
+      ),
+      linear-gradient(90deg, #949494 0%, #191919 100%);
+    --button-radial-secondary: radial-gradient(
+      117.2% 352.94% at 3.21% 1.26%,
+      rgba(198, 198, 198, 0.5) 0%,
+      rgba(166, 166, 166, 0.25) 100%
+    );
   }
 
   .dark {
-    --background: 253 43% 3%;
+    --background: #121212;
     --foreground: 253 31% 98%;
     --muted: 253 7% 13%;
     --muted-foreground: 253 13% 63%;
@@ -51,25 +58,32 @@
     --destructive: 339.2 90.36% 51.18%;
     --destructive-foreground: 0 0% 100%;
     --ring: 253 91% 58%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --chart-1: #fff;
+    --button-radial-primary: linear-gradient(
+      104.59deg,
+      rgba(255, 255, 255, 0.1) 0.76%,
+      rgba(255, 255, 255, 0.0256139) 32.78%,
+      rgba(255, 255, 255, 0.0735087) 69.11%,
+      rgba(255, 255, 255, 0.007) 99%
+    );
+    --button-radial-secondary: radial-gradient(
+      117.2% 352.94% at 3.21% 1.26%,
+      rgba(255, 255, 255, 0.07) 0%,
+      rgba(217, 217, 217, 0) 100%
+    );
   }
-}
 
-@layer base {
   * {
-    @apply border-border;
+    /* @apply border-border; */
   }
 
   body {
-    @apply box-border bg-background text-foreground;
+    @apply /* text-foreground; 
+    */ box-border bg-background;
   }
 
   .gradiant-bg {
-    @apply flex flex-col items-center justify-center rounded-3xl;
+    @apply flex flex-col items-center justify-center rounded-2xl;
   }
 
   .gradiant-bg::before {
@@ -77,7 +91,7 @@
     position: absolute;
     height: calc(100%);
     width: calc(100%);
-    border-radius: 20px;
+    border-radius: 16px;
     background: #121212;
     z-index: -3;
   }
@@ -87,7 +101,7 @@
     position: absolute;
     height: calc(100% + 7px);
     width: calc(100% + 7px);
-    border-radius: 22px;
+    border-radius: 20px;
     background-image: linear-gradient(
       104.59deg,
       rgba(255, 255, 255, 0.1) 0.76%,
@@ -99,7 +113,7 @@
   }
 
   .gradiant-button-primary {
-    @apply relative flex flex-col items-center justify-center rounded-3xl;
+    @apply relative flex flex-col items-center justify-center;
   }
 
   .gradiant-button-primary::before {
@@ -107,7 +121,6 @@
     position: absolute;
     height: calc(100%);
     width: calc(100%);
-    border-radius: 20px;
     background: linear-gradient(90deg, #949494 0%, #191919 100%);
     z-index: -1;
   }
@@ -115,21 +128,12 @@
   .gradiant-button-primary::after {
     content: '';
     position: absolute;
-    height: calc(100% + 6px);
-    width: calc(100% + 6px);
-    border-radius: 24px;
-    background-image: linear-gradient(
-      104.59deg,
-      rgba(255, 255, 255, 0.1) 0.76%,
-      rgba(255, 255, 255, 0.0256139) 32.78%,
-      rgba(255, 255, 255, 0.0735087) 69.11%,
-      rgba(255, 255, 255, 0.007) 99%
-    );
+    background-image: var(--button-radial-primary);
     z-index: -2;
   }
 
   .gradiant-button-secondary {
-    @apply relative flex flex-col items-center justify-center rounded-3xl;
+    @apply relative flex flex-col items-center justify-center;
   }
 
   .gradiant-button-secondary::before {
@@ -137,7 +141,6 @@
     position: absolute;
     height: calc(100%);
     width: calc(100%);
-    border-radius: 20px;
     background: radial-gradient(
       117.2% 352.94% at 3.21% 1.26%,
       rgba(255, 255, 255, 0.07) 0%,
@@ -149,16 +152,7 @@
   .gradiant-button-secondary::after {
     content: '';
     position: absolute;
-    height: calc(100% + 6px);
-    width: calc(100% + 6px);
-    border-radius: 24px;
-    background-image: linear-gradient(
-      104.59deg,
-      rgba(255, 255, 255, 0.1) 0.76%,
-      rgba(255, 255, 255, 0.0256139) 32.78%,
-      rgba(255, 255, 255, 0.0735087) 69.11%,
-      rgba(255, 255, 255, 0.007) 99%
-    );
+    background-image: var(--button-radial-secondary);
     z-index: -2;
   }
 
@@ -172,9 +166,8 @@
     height: calc(100%);
     width: calc(100%);
     border-radius: 20px;
-    background:
-    'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)';
-    box-shadow: "0px 4px 25px 0px #00000026";
+    background: 'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)';
+    box-shadow: '0px 4px 25px 0px #00000026';
     z-index: -1;
   }
 

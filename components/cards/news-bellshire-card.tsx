@@ -12,11 +12,11 @@ const NewsBellshireCard = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="gradiant-bg relative col-span-2 row-span-2 rounded-[20px] border-none bg-custom-radial shadow-custom lg:col-span-4 xl:col-span-4"
-      style={{
-        background:
-          'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
-      }}
+      className="dark:gradiant-bg relative col-span-2 row-span-2 rounded-[20px] border-none bg-custom-radial-light lg:col-span-4 xl:col-span-4 dark:bg-custom-radial dark:shadow-custom"
+      // style={{
+      //   background:
+      //     'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
+      // }}
       layout
       key={'10'}
     >
@@ -24,19 +24,23 @@ const NewsBellshireCard = () => {
         <div className="space-y-6">
           <div className="flex items-center justify-between gap-x-2">
             <div className="flex items-center gap-x-4">
-              <h6 className="rounded-xl bg-[#FFFFFF1A] px-3 py-1 font-inter text-xs text-white xl:text-sm">
+              <h6 className="rounded-xl bg-[#B3B3B31A] px-3 py-1 font-inter text-xs text-grey xl:text-sm dark:bg-[#FFFFFF1A] dark:text-white">
                 NEWS BELLSHIRE
               </h6>
               <h2 className="font-poppins text-base font-medium md:text-lg xl:text-2xl">
                 Profitz est maintenant disponible sur mobile !
               </h2>
             </div>
-            <div className="rounded-lg bg-[#575757] p-1 text-black">
-              <BsArrowUpRight className="h-4 w-4 xl:h-6 xl:w-6" />
+            <div className="rounded-lg dark:bg-[#575757] p-1 bg-gradient-to-r from-[#C6C6C680] to-[#A6A6A640]">
+              <Link
+                href={'https://www.bloomberg.com/quote/2202:HK'}
+                target="_blank"
+              >
+                <BsArrowUpRight className="h-4 w-4 xl:h-6 xl:w-6" />
+              </Link>
             </div>
           </div>
-
-          <p className="font-poppins text-xs text-[#8A8A8A] xl:text-sm">
+          <p className="font-poppins text-xs text-lightHeading xl:text-sm dark:text-paragraph">
             <Link
               href={'https://www.bloomberg.com/quote/2202:HK'}
               target="_blank"

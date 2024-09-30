@@ -49,7 +49,7 @@ function Calendar({
         table: 'w-full border-collapse space-y-1',
         head_row: 'flex gap-x-3',
         head_cell:
-          'text-[#B9B9B9] rounded-md w-5 md:w-4 xl:w-8 font-poppins font-medium text-sm md:text-xs uppercase',
+          'text-lightHeading dark:text-calendarScheduleText rounded-md w-5 md:w-4 xl:w-8 font-poppins font-medium text-sm md:text-xs uppercase',
         row: 'flex gap-x-3 w-full mt-2',
         cell: cn(
           'relative p-0 text-center text-xs xl:text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent',

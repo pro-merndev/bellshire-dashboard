@@ -25,7 +25,7 @@ export default function AuthenticationPage() {
               height={40}
               alt="white-logo"
             />
-            <h1 className="text-xl font-medium tracking-tight text-[#D1D1D1]">
+            <h1 className="text-xl font-medium tracking-tight dark:text-heading text-background">
               Bellshire Mansory
             </h1>
           </div>

@@ -1,8 +1,8 @@
 import PageContainer from '@/components/layout/page-container';
 import Transition from '@/components/layout/transition';
 import PDFPeview from '@/components/pdf-preview';
+import Back from '@/components/ui/back';
 import Link from 'next/link';
-import { FaChevronLeft } from 'react-icons/fa6';
 import { HiOutlineDownload } from 'react-icons/hi';
 
 export default function page() {
@@ -11,11 +11,8 @@ export default function page() {
       <div className="pb-20">
         <Transition>
           <div className="flex justify-between">
-            <div className="flex items-center gap-x-3">
-              <Link href={"/dashboard/pdf"} className="rounded-lg bg-white p-[5px]">
-                <FaChevronLeft size={16} color="#000" />
-              </Link>
-              <p className="font-poppins">Fermer preview</p>
+            <div>
+              <Back />
             </div>
             <Link
               href={'/gant-chart.pdf'}

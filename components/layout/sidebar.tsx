@@ -26,7 +26,7 @@ export default function Sidebar({ className }: SidebarProps) {
         className
       )}
     >
-      <div className="hidden p-5 lg:pt-5 2xl:pt-5 md:block">
+      <div className="hidden p-5 pb-2 md:block">
         <Link href={'/dashboard'} className={cn('flex items-center gap-x-1 2xl:gap-x-2')}>
           <Image
             src={'/white-logo.svg'}
@@ -36,23 +36,16 @@ export default function Sidebar({ className }: SidebarProps) {
             height={40}
           />
           {!isMinimized && (
-            <span className="text-base 2xl:text-xl font-medium text-[#D1D1D1]">
+            <span className="text-base 2xl:text-xl font-medium dark:text-heading text-dark-bg">
               Bellshire Mansory
             </span>
           )}
         </Link>
       </div>
-      {/* <ChevronLeft
-        className={cn(
-          'absolute -right-3 top-10 z-50  cursor-pointer rounded-full border bg-background text-3xl text-foreground',
-          isMinimized && 'rotate-180'
-        )}
-        onClick={handleToggle}
-      /> */}
-      <div className="space-y-4 2xl:py-4">
+      <div className="space-y-4">
         <div className="px-3 2xl:py-2">
-          <div className="mt-3 space-y-1">
-            <DashboardNav navItems={navItems} />
+          <div className="mt-1 space-y-1">
+            <DashboardNav navItems={navItems()} />
           </div>
         </div>
       </div>

@@ -1,6 +1,5 @@
 'use client';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,29 +13,28 @@ import Image from 'next/image';
 export function UserNav() {
   const { data: session } = useSession();
 
-  if (session) {
+  if (!session) {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <div
-            className="gradiant-bg relative h-auto rounded-[20px] bg-custom-radial py-2 shadow-custom focus-visible:ring-0 px-3"
-            style={{}}
-          >
-            <div className="flex w-full gap-x-2">
+          <div className="dark:gradiant-bg relative h-auto rounded-2xl bg-custom-radial-light px-3 py-1 focus-visible:ring-0 dark:bg-custom-radial dark:shadow-custom">
+            <div className="flex items-center w-full gap-x-2">
               <div>
-                <Avatar className="h-10 w-10">
+                <Avatar className="h-8 w-8">
                   <AvatarImage
-                    src={session?.user?.image ?? ''}
-                    alt={session?.user?.name ?? ''}
+                    src={(session as any)?.user?.image ?? ''}
+                    alt={(session as any)?.user?.name ?? ''}
                   />
-                  <AvatarFallback>
+                  <AvatarFallback className='text-white'>
                     {/* {session?.user?.name?.[0]} */}A
                   </AvatarFallback>
                 </Avatar>
               </div>
               <div className="text-left">
-                <h6 className="font-poppins text-base font-medium">Thomas</h6>
-                <p className="font-poppins text-xs text-muted">
+                <h6 className="font-poppins text-base font-medium text-lightHeading dark:text-white">
+                  Thomas
+                </h6>
+                <p className="font-poppins text-xs text-lightHeading dark:text-muted">
                   38.0 h d’appel restant
                 </p>
               </div>

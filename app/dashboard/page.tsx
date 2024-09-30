@@ -3,19 +3,20 @@ import { motion } from 'framer-motion';
 
 import CalendarCard from '@/components/cards/calendar-card';
 import CurrencyCard from '@/components/cards/currency-card';
-import HeuresCard from '@/components/cards/heures-card';
-import MembershipCard from '@/components/cards/membership-card';
 import NewsBellshireCard from '@/components/cards/news-bellshire-card';
 import NewsTraditionalCard from '@/components/cards/news-traditional-card';
 import NewsTwitterCard from '@/components/cards/news-twitter-card';
+import ReusableCard from '@/components/cards/reusable-card';
 import PageAnimatePresence from '@/components/layout/page-animate-presence';
 import PageContainer from '@/components/layout/page-container';
 import Image from 'next/image';
+import ClockIcon from '@/components/svg-icons/clock-icon';
+import CrownIcon from '@/components/svg-icons/crown-icon';
 
 const currencyData = [
   {
     id: 1,
-    title: 'BTC',
+    title: 'BTC Quote',
     currency: 'USD',
     amount: '60,587',
     rateStatus: true,
@@ -26,7 +27,7 @@ const currencyData = [
   },
   {
     id: 2,
-    title: 'ETH',
+    title: 'ETH Quote',
     currency: 'ETH',
     amount: '12.135',
     rateStatus: false,
@@ -37,7 +38,7 @@ const currencyData = [
   },
   {
     id: 3,
-    title: 'EUROSD',
+    title: 'EUROSD Quote',
     currency: 'EUROSD',
     amount: '0.6578',
     rateStatus: true,
@@ -65,7 +66,7 @@ const currencyData = [
   },
   {
     id: 4,
-    title: 'USDT',
+    title: 'USDT Quote',
     currency: 'ETH',
     amount: '12.135',
     rateStatus: true,
@@ -95,7 +96,18 @@ export default function page() {
               icon={currency.icon}
             />
           ))}
-          <HeuresCard />
+          {/* <HeuresCard /> */}
+          <ReusableCard
+            title="Heures disponibles"
+            mainText="10 Heures"
+            primaryButtonText="Réserver maintenant"
+            secondaryButtonText="Ajouter des heures"
+            onPrimaryClick={() => console.log('Réserver clicked')}
+            onSecondaryClick={() => console.log('Ajouter des heures clicked')}
+            icon={
+              <ClockIcon className="fill-lightHeading dark:fill-calendarScheduleText" />
+            }
+          />
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -103,15 +115,21 @@ export default function page() {
             transition={{ duration: 1 }}
             layout
             key={'7'}
-            className="gradiant-bg relative col-span-2 row-span-4 rounded-[20px] border-none bg-custom-radial shadow-custom"
-            style={{
-              background:
-                'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
-            }}
+            className="dark:gradiant-bg relative col-span-2 row-span-4 rounded-[20px] border-none bg-custom-radial-light dark:bg-custom-radial dark:shadow-custom"
           >
             <CalendarCard />
           </motion.div>
-          <MembershipCard />
+          {/* <MembershipCard /> */}
+          <ReusableCard
+            title="Membership actuel"
+            subtitle="Membership actuel"
+            mainText="Prestige"
+            primaryButtonText="Gestion membership"
+            secondaryButtonText="En savoir plus"
+            icon={<CrownIcon />}
+            onPrimaryClick={() => console.log('Gestion membership clicked')}
+            onSecondaryClick={() => console.log('En savoir plus clicked')}
+          />
           <NewsTraditionalCard />
           <NewsTwitterCard />
           <NewsBellshireCard />

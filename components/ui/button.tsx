@@ -9,10 +9,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'gradiant-button-primary',
+        default:
+          'gradiant-button-primary dark:after:h-[calc(100%+6px)] dark:after:w-[calc(100%+6px)]  rounded-2xl before:rounded-xl after:rounded-2xl z-0',
         outline: '',
         none: '',
-        secondary: 'gradiant-button-secondary'
+        secondary:
+          'gradiant-button-secondary dark:after:h-[calc(100%+6px)] dark:after:w-[calc(100%+6px)] after:w-full after:h-full rounded-2xl before:rounded-xl after:rounded-2xl z-0'
       },
       size: {
         default: 'h-9 px-4 py-2',

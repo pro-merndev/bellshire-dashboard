@@ -22,13 +22,7 @@ const PdfCard = (props: PDFCardProps) => {
       transition={{ duration: 0.3 }}
     >
       <Link href={'/dashboard/pdf/pdf-details'}>
-        <Card
-          className="gradiant-bg relative rounded-[20px] border-none bg-custom-radial shadow-custom"
-          style={{
-            background:
-              'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
-          }}
-        >
+        <Card className="dark:gradiant-bg relative rounded-[20px] border-none bg-custom-radial-light dark:bg-custom-radial dark:shadow-custom">
           <div className="w-full space-y-6 p-6">
             <Image
               src={'/pdf-preview.png'}
@@ -40,7 +34,7 @@ const PdfCard = (props: PDFCardProps) => {
             <h4 className="font-poppins text-base text-white">{title}</h4>
             <div className="space-y-4">
               <Button
-                className="h-auto w-full rounded-xl py-3 font-roboto text-white"
+                className="h-auto w-full rounded-xl py-3 font-roboto dark:text-white text-lightHeading"
                 variant={'secondary'}
               >
                 Preview

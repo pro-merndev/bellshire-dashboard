@@ -10,28 +10,29 @@ const NewsTwitterCard = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="gradiant-bg relative col-span-2 row-span-2 rounded-[20px] border-none bg-custom-radial shadow-custom"
-      style={{
-        background:
-          'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
-      }}
+      className="dark:gradiant-bg relative col-span-2 row-span-2 rounded-[20px] border-none dark:bg-custom-radial dark:shadow-custom bg-custom-radial-light"
       layout
       key={'9'}
     >
       <div className="flex w-full justify-between p-5">
         <div className="space-y-6">
           <div className="flex items-center justify-between gap-x-2">
-            <h6 className="rounded-xl bg-[#85E2FF1A] px-3 py-1 font-inter text-xs text-[#84E0FF] xl:text-sm">
+            <h6 className="rounded-xl dark:bg-[#85E2FF1A] px-3 py-1 font-inter text-xs dark:text-[#84E0FF] xl:text-sm text-[#3F93AF] bg-[#3272851A]">
               NEWS TWITTER
             </h6>
-            <div className="rounded-lg bg-[#575757] p-1 text-black">
-              <BsArrowUpRight className="h-4 w-4 xl:h-6 xl:w-6" />
+            <div className="rounded-lg dark:bg-[#575757] p-1 text-black bg-gradient-to-r from-[#C6C6C680] to-[#A6A6A640]">
+              <Link
+                href={'https://www.bloomberg.com/quote/2202:HK'}
+                target="_blank"
+              >
+                <BsArrowUpRight className="h-4 w-4 xl:h-6 xl:w-6 fill-" />
+              </Link>
             </div>
           </div>
           <h2 className="font-poppins text-base font-medium md:text-lg xl:text-2xl">
             China Vanke’s Sales Slump Worsens After Debt Cracks Show Up
           </h2>
-          <p className="font-poppins text-xs text-[#8A8A8A] xl:text-sm">
+          <p className="font-poppins text-xs dark:text-paragraph text-lightHeading xl:text-sm">
             <Link
               href={'https://www.bloomberg.com/quote/2202:HK'}
               target="_blank"

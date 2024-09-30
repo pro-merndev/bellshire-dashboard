@@ -1,6 +1,7 @@
 import CalendarCard from '@/components/cards/calendar-card';
 import PageContainer from '@/components/layout/page-container';
 import Transition from '@/components/layout/transition';
+import ClockIcon from '@/components/svg-icons/clock-icon';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
@@ -10,36 +11,19 @@ export default function page() {
       <div className="pb-20">
         <Transition>
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-            <div
-              className="gradiant-bg relative col-span-2 row-span-4 rounded-[20px] border-none bg-custom-radial shadow-custom"
-              style={{
-                background:
-                  'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
-              }}
-            >
+            <div className="dark:gradiant-bg relative col-span-2 row-span-4 rounded-[20px] border-none bg-custom-radial-light dark:bg-custom-radial dark:shadow-custom">
               <CalendarCard />
             </div>
-            <div
-              className="gradiant-bg relative col-span-2 row-span-4 rounded-[20px] border-none bg-custom-radial shadow-custom"
-              style={{
-                background:
-                  'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
-              }}
-            >
+            <div className="dark:gradiant-bg relative col-span-2 row-span-4 rounded-[20px] border-none bg-custom-radial-light dark:bg-custom-radial dark:shadow-custom">
               <div className="flex h-full w-full flex-col justify-between gap-4 p-5">
                 <div className="space-y-6">
                   <div className="flex items-center gap-x-2">
-                    <Image
-                      src={'/clock.svg'}
-                      alt="Tether"
-                      width={20}
-                      height={20}
-                    />
-                    <h2 className="font-poppins text-sm text-[#B9B9B9]">
+                    <ClockIcon />
+                    <h2 className="font-poppins text-sm text-lightHeading dark:text-calendarScheduleText">
                       Heures disponibles
                     </h2>
                   </div>
-                  <h4 className="font-poppins text-2xl font-medium md:text-[32px]">
+                  <h4 className="font-poppins text-2xl font-medium text-lightHeading md:text-[32px] dark:text-white">
                     10 Heures
                   </h4>
                 </div>
@@ -47,20 +31,12 @@ export default function page() {
                   <Button
                     variant={'default'}
                     className="h-auto w-full rounded-full py-3 font-roboto text-white"
-                    // style={{
-                    //   background:
-                    //     'linear-gradient(90deg, #949494 0%, #191919 100%)'
-                    // }}
                   >
                     Réserver maintenant
                   </Button>
                   <Button
                     variant={'secondary'}
-                    className="h-auto w-full rounded-full py-3 font-roboto text-white"
-                    style={{
-                      background:
-                        'linear-gradient(90deg, #FFFFFF12 0%, #D9D9D900 100%)'
-                    }}
+                    className="h-auto w-full rounded-full py-3 font-roboto text-lightHeading dark:text-white"
                   >
                     En savoir plus
                   </Button>
