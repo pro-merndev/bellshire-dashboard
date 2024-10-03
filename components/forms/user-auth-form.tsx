@@ -59,7 +59,7 @@ export default function UserAuthForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="ml-4 font-poppins text-xs font-light tracking-wide">
+                <FormLabel className="ml-4 font-poppins text-xs font-light tracking-wide dark:text-white text-lightHeading">
                   Adresse mail
                 </FormLabel>
                 <FormControl>
@@ -68,7 +68,7 @@ export default function UserAuthForm() {
                     placeholder="Email"
                     disabled={loading}
                     {...field}
-                    className="h-auto rounded-lg border-[0.5px] border-[#E5E5E5] py-3 text-sm text-[#B5B5B5] md:text-base"
+                    className="h-auto rounded-lg border-[0.5px] border-[#E5E5E5] py-3 text-sm dark:text-[#B5B5B5] text-lightHeading md:text-base"
                     style={{
                       background:
                         'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
@@ -94,7 +94,7 @@ export default function UserAuthForm() {
                       placeholder="Entrez votre mot de passe"
                       disabled={loading}
                       {...field}
-                      className="h-auto rounded-lg border-[0.5px] border-[#E5E5E5] py-3 text-sm text-[#B5B5B5] md:text-base"
+                      className="h-auto rounded-lg border-[0.5px] border-[#E5E5E5] py-3 text-sm dark:text-[#B5B5B5] text-lightHeading md:text-base"
                       style={{
                         background:
                           'radial-gradient(117.2% 352.94% at 3.21% 1.26%, rgba(255, 255, 255, 0.07) 0%, rgba(217, 217, 217, 0) 100%)'
@@ -144,13 +144,13 @@ export default function UserAuthForm() {
                           defaultChecked={true}
                           checked={field.value}
                           onCheckedChange={field.onChange}
-                          className="border-[0.5px] border-[#E5E5E5]"
+                          className="border-[0.5px] border-[#E5E5E5] dark:text-white text-lightHeading"
                           style={{
                             background:
                               'linear-gradient(90deg, #949494 0%, #191919 100%)'
                           }}
                         />
-                        <FormLabel className="text-xs tracking-wide text-[#E4E4E4AF]">
+                        <FormLabel className="text-xs tracking-wide dark:text-[#E4E4E4AF]  text-lightHeading">
                           Se souvenir de moi
                         </FormLabel>
                       </div>

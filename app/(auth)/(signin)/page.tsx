@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function AuthenticationPage() {
   return (
     <div className="relative h-screen flex-col items-center justify-center bg-background">
-      <div className="flex h-full items-center p-4 text-white lg:p-8">
+      <div className="flex h-full items-center p-4 dark:text-white text-lightHeading lg:p-8">
         <div
           className="login-gradiant-bg relative z-10 mx-auto box-border flex w-full flex-col justify-center space-y-6 p-10 sm:w-[450px]"
           style={{
@@ -25,7 +25,7 @@ export default function AuthenticationPage() {
               height={40}
               alt="white-logo"
             />
-            <h1 className="text-xl font-medium tracking-tight dark:text-heading text-background">
+            <h1 className="text-xl font-medium tracking-tight dark:text-heading text-lightHeading text-background">
               Bellshire Mansory
             </h1>
           </div>
