@@ -69,7 +69,7 @@ module.exports = {
         green: '#1DCA93',
         cyan10: 'rgba(133, 253, 216, 0.1)',
         red10: 'rgba(255, 133, 133, 0.1)',
-        red: '#FF6E6E',
+        // red: '#FF6E6E',
         blue: '#4563F9',
         lightBlue: '#627CFD',
         lightBlue15: 'rgba(116, 139, 255, 0.15)',

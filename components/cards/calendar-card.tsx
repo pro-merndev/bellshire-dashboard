@@ -2,6 +2,7 @@ import { format } from 'date-fns';
 import Image from 'next/image';
 import { Calendar } from '../ui/calendar';
 import CalendarIcon from '../svg-icons/calendar-icon';
+import { Calendar2 } from '../ui/calendar2';
 
 const CalendarCard = () => {
   return (
@@ -46,8 +47,13 @@ const CalendarCard = () => {
         <Calendar
           showOutsideDays={false}
           className="[&>div>div]:w-full"
-          selected={[new Date(2024, 8, 13), new Date(2024, 8, 20)]}
+          selected={[new Date(2024, 9, 11), new Date(2024, 9, 18)]}
         />
+        {/* <Calendar2
+          showOutsideDays={false}
+          className="[&>div>div]:w-full"
+          selected={[new Date(2024, 8, 13), new Date(2024, 8, 20)]}
+        /> */}
       </div>
     </div>
   );
